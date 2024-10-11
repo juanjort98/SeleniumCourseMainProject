@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.support.ui.Select;
+
 public class PrincipalPage extends BasePage {
 
     public PrincipalPage(){
@@ -10,6 +12,9 @@ public class PrincipalPage extends BasePage {
 
     public void navigateToPage(){
         navigateTo("https://www.freerangetesters.com/");
+
+     
+        
     }
     
 }

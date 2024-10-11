@@ -16,5 +16,5 @@ public class TestRunner {
 @AfterClass
 public static void cleanDriver(){
         BasePage.closeBrowser();
-}   
+    }   
 }
