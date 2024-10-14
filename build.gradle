@@ -18,24 +18,22 @@ repositories {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
-
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-
+   
+    //Selenium WebDriver
     implementation 'org.seleniumhq.selenium:selenium-java:4.25.0'
-    // https://mvnrepository.com/artifact/org.testng/testng
+    implementation 'io.github.bonigarcia:webdrivermanager:5.9.2'
 
-    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
-     implementation 'io.github.bonigarcia:webdrivermanager:5.9.2'
-
+    //TestNG
     testImplementation 'org.testng:testng:7.10.2'
-    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
-
-    implementation 'io.cucumber:cucumber-java:7.20.0'
-    // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
-    
+   
+   //Cucumber
+    implementation 'io.cucumber:cucumber-java:7.20.0' 
     testImplementation 'io.cucumber:cucumber-junit:7.20.0'
 }
 
-tasks.named('test') { 
-systemProperty "cucumber.options", System.getProperty("cucumber.options")}
+tasks.named('test') {
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+    systemProperties System.getProperties();
+}
+

@@ -7,14 +7,13 @@ import io.cucumber.junit.CucumberOptions;
 import pages.BasePage;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
-    features = "src\\test\\resources", //Directory of .feature files
-    glue = "steps",   //Package with classes with steps defined in feature file
-    plugin = {"pretty", "html:target/cucumber-reports"})
+@CucumberOptions(features = "src\\test\\resources", // Directory of .feature files
+        glue = "steps", // Package with classes with steps defined in feature file
+        plugin = { "pretty", "html:target/cucumber-reports" }, tags = "")
 
 public class TestRunner {
-@AfterClass
-public static void cleanDriver(){
+    @AfterClass
+    public static void cleanDriver() {
         BasePage.closeBrowser();
-    }   
+    }
 }
